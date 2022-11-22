@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Componente } from '../interfaces/interfaces';
-import { Canchas } from '../interfaces/canchas';
+import { ICanchas } from '../interfaces/icanchas';
 import { Observable } from 'rxjs';
+import {} from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  canchas: Observable<Canchas[]>
-  items: Canchas[];
+  canchas: Observable<ICanchas[]>
+  items: ICanchas[];
 
   constructor(private http: HttpClient) { }
 
@@ -22,8 +23,12 @@ export class DataService {
     return this.http.get<Componente[]>('/assets/data/menu.json');
   }
 
-  getCanchas(): Observable<Canchas[]>{
-    return this.http.get<Canchas[]>('/assets/data/canchas.json');
+  getCanchas(){
+    return this.http.get<ICanchas[]>('/assets/data/canchas.json');
+  }
+
+  getCanchasFiltro(){
+    return this.http.get<ICanchas>('/assets/data/canchas.json');
   }
 
 

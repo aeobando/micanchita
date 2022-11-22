@@ -6,7 +6,8 @@ import { ReservarCanchaPage } from './reservar-cancha.page';
 const routes: Routes = [
   {
     path: '',
-    component: ReservarCanchaPage
+    component: ReservarCanchaPage,
+    
   }
 ];
 

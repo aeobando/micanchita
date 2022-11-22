@@ -16,6 +16,7 @@ import { ComponentsModule } from '../components/components.module';
     IonicModule,
     ReservarCanchaPageRoutingModule,
     ComponentsModule
+
   ],
   declarations: [ReservarCanchaPage]
 })

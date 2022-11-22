@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
-import { Canchas } from '../interfaces/canchas';
+import { ICanchas } from '../interfaces/icanchas';
 
 @Component({
   selector: 'app-reservas',
@@ -10,7 +10,7 @@ import { Canchas } from '../interfaces/canchas';
 })
 export class ReservasPage implements OnInit {
 
-  canchas: Observable<Canchas[]>
+  canchas: Observable<ICanchas[]>
   rotateImg = 0;
 
   constructor(private dataService: DataService) {

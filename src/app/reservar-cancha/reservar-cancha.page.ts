@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Canchas } from '../interfaces/canchas';
+import { ICanchas } from '../interfaces/icanchas';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Canchas } from '../models/canchas';
 
 
 @Component({
@@ -12,47 +13,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ReservarCanchaPage implements OnInit {
   private id;
-  canchas: Observable<Canchas[]>
-  canchita: any;
-  cancho: any;
+  month: string;
+  year: number;
+  canchita: ICanchas;
+
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
-    this.canchas = this.dataService.getCanchas();
     this.id = this.route.snapshot.paramMap.get('id');
+    this.dataService.getCanchas()
+      .subscribe((resp) => {
+        resp.forEach((snap) => {
+          if (snap.id == this.id) {
+            this.canchita = snap;
+            console.log(this.canchita.nombre);
+          }
+        });
 
-
-    this.cancho = this.dataService.getCanchas().subscribe(data => {
-      return data.filter((item) => { return item.id == this.id });
-    });
-
-
-
-    this.canchas.subscribe(data => {
-      data.forEach((snap) => {
-        if (snap.id == this.id) {
-          this.canchita = snap;
-          console.log(this.canchita.nombre);
-        }
       });
-    })
 
-
-
-
-
-
-
-
-
-
-
-    /* this.canchas.forEach((item)=>{
-       if(item["id"] == this.id){
-         this.canchita = item
-       }
-     })*/
-  }
-
+    }
 }

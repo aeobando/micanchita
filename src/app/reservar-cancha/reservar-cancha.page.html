@@ -2,21 +2,52 @@
 
 <ion-content>
 
-  <!---->
-  <ion-list><ion-item *ngFor="let cancha of canchita |async">{{canchita.id}}</ion-item></ion-list>
 
 
-<!--<ion-label >Valor: {{canchita.id | async}}</ion-label>
+
   <ion-card>
-    <img alt="Silhouette of mountains" *ngIf="" [src]=""/>
+    <img alt="Cancha" *ngIf="canchita?.imagen" [src]="canchita?.imagen"/>
     <ion-card-header>
-      <ion-card-title>{{canchita.nombre}}</ion-card-title>
-      <ion-card-subtitle>{{canchita.Precio | currency}}</ion-card-subtitle>
+      <ion-card-title>{{canchita?.nombre}}</ion-card-title>
+      <ion-card-subtitle>{{canchita?.precioHora | currency}}</ion-card-subtitle>
     </ion-card-header>
-
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
     </ion-card-content>
-  </ion-card>-->
+  </ion-card>
+
+  <ion-list>
+  <ion-item>
+    <ion-label>Horas</ion-label>
+    <ion-select [(ngModel)]="month">
+      <ion-item-option value="01">January</ion-item-option>
+      <ion-item-option value="02">February</ion-item-option>
+      <ion-item-option value="03">March</ion-item-option>
+      <ion-item-option value="04">April</ion-item-option>
+      <ion-item-option value="05">May</ion-item-option>
+      <ion-item-option value="06">June</ion-item-option>
+      <ion-item-option value="07">July</ion-item-option>
+      <ion-item-option value="08">August</ion-item-option>
+      <ion-item-option value="09">September</ion-item-option>
+      <ion-item-option value="10">October</ion-item-option>
+      <ion-item-option value="11">November</ion-item-option>
+      <ion-item-option value="12" checked="true">December</ion-item-option>
+    </ion-select>
+    <ion-select [(ngModel)]="year">
+      <ion-item-option>1989</ion-item-option>
+      <ion-item-option>1990</ion-item-option>
+      <ion-item-option>1991</ion-item-option>
+      <ion-item-option>1992</ion-item-option>
+      <ion-item-option>1993</ion-item-option>
+      <ion-item-option checked="true">1994</ion-item-option>
+      <ion-item-option>1995</ion-item-option>
+      <ion-item-option>1996</ion-item-option>
+      <ion-item-option>1997</ion-item-option>
+      <ion-item-option>1998</ion-item-option>
+      <ion-item-option>1999</ion-item-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+  <ion-button expand="block">Confirmar reserva</ion-button>
 </ion-content>
 <app-footer></app-footer>
