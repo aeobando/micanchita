@@ -1,44 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Componente } from '../interfaces/interfaces';
+import { ICanchas } from '../interfaces/icanchas';
+import { Observable } from 'rxjs';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage {
+export class InicioPage implements OnInit {
 
   componentes: Componente[] = [];
 
-
-  slides: { img: string, titulo: string, desc: string }[] = [
-    {
-      img: '/assets/images/canchas/Morumbi.jpg',
-      titulo: 'Morumbi',
-      desc: 'Reservar'
-    },
-    {
-      img: '/assets/images/canchas/Atenas.jpg',
-      titulo: 'Atenas',
-      desc: 'Reservar'
-    },
-
-    {
-      img: '/assets/images/canchas/maracana.jpg',
-      titulo: 'Maracana',
-      desc: 'Reservar'
-    },
-
-    {
-      img: '/assets/images/canchas/Bombonera.jpg',
-      titulo: 'Bombonera',
-      desc: 'Reservar'
-    }
-
-
-  ]
-  constructor() { }
+  slides: Observable<ICanchas[]>
+  constructor(private dataService: DataService) { }
 
   slideOpciones = {
     initialSlide: 0,
@@ -46,5 +23,9 @@ export class InicioPage {
     autoplay: true,
     speed: 100
   };
+
+  ngOnInit() {
+    this.slides = this.dataService.getCanchas();
+  }
 
 }
