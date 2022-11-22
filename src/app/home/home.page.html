@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="toogleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+      <ion-menu-button color="primary" menu="PrimerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
+  -->
+    <ion-title>MiCanchita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="logo">
+    <ion-grid>
+      <img alt="logomicanchita" src="../../assets/images/logomicanchita.png" />
+    </ion-grid>
+  </div>
+
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col align-self-center>
+          <ion-button [routerLink]="['/registrarse']" expand="block" color="primary">Registrarse</ion-button>
+
+          <span class="already">¿Ya eres usuario?</span>
+          <ion-button [routerLink]="['/login']" expand="block" color="danger">Iniciar Sesión</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!--<ion-list>
+    <ion-item *ngFor="let user of  usuarios | async">
+      <ion-label>
+        <h3>{{user.name}}</h3>
+        <p> {{user.email}}</p>
+      </ion-label>
+
+      <ion-label slot="end" text-right>
+        {{user.phone}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+-->
+
+</ion-content>
+
+<app-footer></app-footer>

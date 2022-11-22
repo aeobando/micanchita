@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!--   <ion-button (click)="toogleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button> -->
+      <ion-menu-button color="primary" menu="PrimerMenu">
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Bienvenido Andres</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-router-outlet id="principal"></ion-router-outlet>
+  <!---->
+  <div class="slide">
+    <ion-slides pager="true" [options]="slideOpciones">
+      <ion-slide *ngFor="let slide of slides">
+        <ion-card mode="ios">
+          <img class="slideimg" alt="" [src]="slide.img" />
+          <ion-card-header>
+            <ion-card-title>{{slide.titulo}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button>{{slide.desc}}</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+
+  <div class="wrapper">
+    <blockquote class="caracteristicasblq">
+      <ion-label>¡Hoy es un buen d&iacute;a para Jugar!</ion-label>
+    </blockquote>
+
+    <section class="opciones">
+
+      <section class="opcionreserva">
+        <div class="ion-activatable ripple-parent circle" [routerLink]="['/reservas']">
+          <img src="../../assets/images/reserva.png" alt="">
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+        <ion-text>Reservar</ion-text>
+      </section>
+
+      <section class="opcionmispartidos">
+        <div class="ion-activatable ripple-parent circle" [routerLink]="['/mispartidos']">
+          <img src="../../assets/images/listadopartidos.png" alt="">
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+        <ion-text>Mis Partidos</ion-text>
+      </section>
+
+    </section>
+  </div>
+
+</ion-content>
+
+<app-footer></app-footer>

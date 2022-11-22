@@ -1,0 +1,6 @@
+[
+  {"id": 1,"nombre": "Morumbi", "precioHora":"70000", "imagen":"../../assets/images/canchas/Morumbi.jpg"},
+  {"id": 2, "nombre": "Atenas", "precioHora":"80000", "imagen":"../../assets/images/canchas/Atenas.jpg"},
+  {"id": 3, "nombre": "Maracana", "precioHora":"60000", "imagen":"../../assets/images/canchas/maracana.jpg"},
+  {"id": 4, "nombre": "Bombonera", "precioHora":"50000", "imagen":"../../assets/images/canchas/Bombonera.jpg"}
+]

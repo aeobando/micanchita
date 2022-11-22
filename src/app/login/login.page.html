@@ -1,0 +1,21 @@
+<app-header titulo="Iniciar Sesión"></app-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/inicio']" type="submit" color="danger" expand="block">Ingresar</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">¿Olividaste la contraseña?</a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+<app-footer></app-footer>

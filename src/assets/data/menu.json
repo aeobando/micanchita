@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "football-sharp",
+    "name": "Inicio",
+    "redirect": "/inicio"
+  },
+  {
+    "icon": "calendar-sharp",
+    "name": "Reservar",
+    "redirectTo": "/reservas"
+  },
+  {
+    "name": "Mis Partidos",
+    "icon": "walk",
+    "redirectTo": "/mispartidos"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "name": "micanchita",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
