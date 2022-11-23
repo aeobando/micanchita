@@ -6,64 +6,29 @@
 
 <ion-content>
 
-  <!--<div class="logo">
-    <ion-grid>
-      <img alt="logomicanchita" src="../../assets/images/logomicanchita.png" />
-    </ion-grid>
+  <div class="background-container">
+    <div class="background-filter">
+      <ion-card>
+        <img src="../../assets/images/logomicanchita.png" />
+        <ion-card-header>
+          <ion-card-title>
+            Bienvenidos a MiCanchita
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="irAlLogin()">
+            Login
+          </ion-button>
+        </ion-card-content>
+        <div class="bottom-section">
+          <span>
+            <ion-text>¿No tienes una cuenta? </ion-text>
+            <ion-router-link color="success" [routerLink]="['/registrarse']">Sing Up</ion-router-link>
+          </span>
+        </div>
+      </ion-card>
+    </div>
   </div>
-
-  <div id="container">
-    <ion-grid>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-button [routerLink]="['/registrarse']" expand="block" color="primary">Registrarse</ion-button>
-
-          <span class="already">¿Ya eres usuario?</span>
-          <ion-button [routerLink]="['/login']" expand="block" color="danger">Iniciar Sesión</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
-  <ion-list>
-    <ion-item *ngFor="let user of  usuarios | async">
-      <ion-label>
-        <h3>{{user.name}}</h3>
-        <p> {{user.email}}</p>
-      </ion-label>
-
-      <ion-label slot="end" text-right>
-        {{user.phone}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
--->
-
-
-<div class="background-container">
-
-  <div class="background-filter">
-
-
-
-  <ion-card>
-    <img src="../../assets/images/logomicanchita.png" />
-   <ion-card-header>
-     <ion-card-title>
-      Bienvenidos a MiCanchita
-     </ion-card-title>
-   </ion-card-header>
-   <ion-card-content>
-     <ion-button (click)="loginPage()">
-       Login
-     </ion-button>
-
-   </ion-card-content>
-   <span class="resgistrarse">¿Aun no eres usuario?</span>  <ion-router-link  class="underline" [routerLink]="['/registrarse']" ><h4>Sing Up</h4></ion-router-link>
-
-  </ion-card>
-  </div>
-</div>
 
 
 </ion-content>

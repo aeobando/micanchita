@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
     this.usuarios = this.dataService.getUsers();
   }
 
-  loginPage(){
+  irAlLogin(){
     this.router.navigate(['login'])
    }
 

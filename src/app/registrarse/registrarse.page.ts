@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrarse',
@@ -8,9 +9,13 @@ import { DataService } from '../services/data.service';
 })
 export class RegistrarsePage implements OnInit {
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,private router:Router) { }
 
   ngOnInit() {
   }
 
+
+  irAlLogin(){
+    this.router.navigate(['login']);
+     }
 }

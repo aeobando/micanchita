@@ -1,28 +1,49 @@
 <app-header titulo="Registrarse"></app-header>
 <ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Primer nombre</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Apellidos</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Registrarme</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+
+  <div class="background-pic">
+    <div class="background-filter">
+      <div class="shape"><img src="../../assets/shape.svg" /></div>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Registrar Usuario
+          </ion-card-title>
+          <ion-card-subtitle>
+            Crea tu <strong>cuenta</strong> llenando
+            el formulario
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input placeholder="Nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Apellidos"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="No. Tel&eacute;fono"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Password"></ion-input>
+          </ion-item>
+
+          <div class="bottom-section">
+            <ion-button (click)="irAlLogin()">Registrarme</ion-button>
+            <span>
+              <ion-text>Ya tienes una cuenta? </ion-text>
+               <ion-router-link color="success" [routerLink]="['/login']">Sing In</ion-router-link></span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+
 </ion-content>
 
 <app-footer></app-footer>
