@@ -88,10 +88,6 @@ ion-title{
    color: #3F9B99 !important;
 
 }
-
-
-//// styling up the content section //////////////////////////////////////////////////////////////////////////
-
 #container{
 
    display:absolute;
@@ -100,8 +96,6 @@ ion-title{
    text-align:center;
    transform: translateY(-50%);
 }
-
-////// Seaerch bar section//////
 
 .searchbar{
    padding:0px;
@@ -126,9 +120,6 @@ ion-searchbar{
 {
    --background: rgb(190, 190, 190) !important;
 }
-
-
-///  main featured products section/////////////////////////////////////////////////
 
 main-featured-products{
    color:#000 !important;
@@ -175,7 +166,7 @@ ion-card-title {
 }
 
 ion-card-subtitle {
-   font-size: 8px;
+   font-size: 11px;
    font-family: Montserrat_Regular;
    font-weight: 200;
    color: #cfcfcf;
