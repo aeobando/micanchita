@@ -15,7 +15,7 @@
 
 <ion-content>
   <ion-router-outlet id="principal"></ion-router-outlet>
-  <!---->
+  <!--
   <div class="slide">
     <ion-slides pager="true" [options]="slideOpciones">
       <ion-slide *ngFor="let slide of slides | async">
@@ -59,6 +59,51 @@
 
     </section>
   </div>
+-->
+
+
+
+
+<div id="container">
+
+  <div class="searchbar">
+    <ion-searchbar placeholder="Buscar canchas" no-shadow>
+    </ion-searchbar>
+
+
+    <div class="main-featured-products">
+     <ion-slides pager="true" [options]="options" (click)="sliderOptions">
+      <ion-slide *ngFor="let cancha of slides | async">
+        <ion-card class="main-product-card">
+          <ion-card-content>
+          <img [src]="[cancha?.imagen]" />
+
+          <ion-card-title>
+            {{cancha.nombre}}
+        </ion-card-title>
+
+          <ion-card-subtitle>
+              <ion-item lines="none" full="true">
+               <ion-icon name="star"  color="warning"></ion-icon>
+               <ion-icon name="star"  color="warning"></ion-icon>
+               <ion-icon name="star"  color="warning"></ion-icon>
+               <ion-icon name="star"  color="warning"></ion-icon>
+              </ion-item>
+
+          <div class="time-icon">
+           <ion-icon ios="cash-outline" md="timer"  color="warning"></ion-icon>
+           {{cancha?.precioHora | currency}}
+            </div>
+         </ion-card-subtitle>
+
+       </ion-card-content>
+       </ion-card>
+      </ion-slide>
+     </ion-slides>
+    </div>
+
+</div>
+</div>
 
 </ion-content>
 

@@ -23,6 +23,22 @@ export class InicioPage implements OnInit {
     autoplay: true,
     speed: 100
   };
+  options = {
+    slidesPerView: 1.5,
+    centered: true,
+    spaceBetweenView:10,
+    speed:400
+  }
+
+
+  sliderOptions ={
+  initialSlide: 0,
+  slidesPerView: 1,
+  autoplay: true
+
+  }
+
+
 
   ngOnInit() {
     this.slides = this.dataService.getCanchas();
