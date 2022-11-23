@@ -1,7 +1,7 @@
 <app-header titulo="Iniciar Sesión"></app-header>
 
 <ion-content>
-  <form>
+  <!--<form>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="text" required></ion-input>
@@ -17,5 +17,37 @@
       </ion-col>
     </ion-row>
   </form>
-</ion-content>
+</ion-content>-->
+
+
+<div class="background-pic">
+  <div class="background-filter">
+    <div class="shape"><img src="../../assets/shape.svg" /></div>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+         MiCanchita
+        </ion-card-title>
+        <ion-card-subtitle>
+         ¡Llego la hora de la diversi&oacute;n!
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+         <ion-item>
+          <ion-input placeholder="Nombre de Usuario o Email"></ion-input>
+         </ion-item>
+         <ion-item>
+           <ion-input placeholder="Password"></ion-input>
+         </ion-item>
+         <ion-text class="a">¿Olividaste tu contraseña?</ion-text>
+
+         <div class="bottom-section">
+           <ion-button (click)="irAlInicio()">Sign In</ion-button>
+           <span> ¿No tienes una cuenta ? <ion-router-link  color="success"  [routerLink]="['/registrarse']" ><h4>Sing Up</h4></ion-router-link></span>
+         </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
 <app-footer></app-footer>
