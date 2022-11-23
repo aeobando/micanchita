@@ -20,7 +20,7 @@
           <ion-item>
             <ion-input placeholder="Password"></ion-input>
           </ion-item>
-          <ion-text class="a">¿Olividaste tu contraseña?</ion-text>
+          <ion-text [routerLink]="['/recuperarcuenta']" class="a">¿Olividaste tu contraseña?</ion-text>
 
           <div class="bottom-section">
             <ion-button (click)="irAlInicio()">Sign In</ion-button>

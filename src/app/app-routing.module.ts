@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'reservar-cancha/:id',
     loadChildren: () => import('./reservar-cancha/reservar-cancha.module').then( m => m.ReservarCanchaPageModule)
   },
+  {
+    path: 'recuperarcuenta',
+    loadChildren: () => import('./recuperarcuenta/recuperarcuenta.module').then( m => m.RecuperarcuentaPageModule)
+  },
 
 
 ];
