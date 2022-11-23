@@ -1,21 +1,12 @@
 <ion-header no-border>
   <ion-toolbar>
-    <!-- <ion-buttons slot="start">
-      <ion-button (click)="toogleMenu()">
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
-      <ion-menu-button color="primary" menu="PrimerMenu">
-
-      </ion-menu-button>
-    </ion-buttons>
-  -->
     <ion-title>MiCanchita</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div class="logo">
+  <!--<div class="logo">
     <ion-grid>
       <img alt="logomicanchita" src="../../assets/images/logomicanchita.png" />
     </ion-grid>
@@ -34,7 +25,7 @@
     </ion-grid>
   </div>
 
-  <!--<ion-list>
+  <ion-list>
     <ion-item *ngFor="let user of  usuarios | async">
       <ion-label>
         <h3>{{user.name}}</h3>
@@ -47,6 +38,33 @@
     </ion-item>
   </ion-list>
 -->
+
+
+<div class="background-container">
+
+  <div class="background-filter">
+
+
+
+  <ion-card>
+    <img src="../../assets/images/logomicanchita.png" />
+   <ion-card-header>
+     <ion-card-title>
+      Bienvenidos a MiCanchita
+     </ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+     <ion-button (click)="loginPage()">
+       Login
+     </ion-button>
+
+   </ion-card-content>
+   <span class="resgistrarse">¿Aun no eres usuario?</span>  <ion-router-link  class="underline" [routerLink]="['/registrarse']" ><h4>Sing Up</h4></ion-router-link>
+
+  </ion-card>
+  </div>
+</div>
+
 
 </ion-content>
 

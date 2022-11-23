@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
@@ -12,7 +13,7 @@ export class HomePage implements OnInit {
 
   usuarios:Observable<any>;
 
-  constructor(private dataService: DataService
+  constructor(private dataService: DataService,private router: Router
     /* private menuCtrl:MenuController */) {}
   /* toogleMenu(){
     this.menuCtrl.toggle();
@@ -20,4 +21,9 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.usuarios = this.dataService.getUsers();
   }
+
+  loginPage(){
+    this.router.navigate(['login'])
+   }
+
 }
