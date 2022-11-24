@@ -194,6 +194,18 @@ ion-item{
 
 .time-icon{
    padding-top: 6px;
+
 }
+
+ion-button {
+  height: 30px;
+  width: 160px;
+  font-size: 14px;
+  text-transform: none;
+  --background: #6eeba0;
+  font-weight: 400;
+  --border-radius: 15px !important;
+  color: #ffff;
+  }
 
 
