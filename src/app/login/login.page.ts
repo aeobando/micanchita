@@ -28,10 +28,25 @@ export class LoginPage implements OnInit {
                   password: this.form.get('password').value
                 }
 
-this.usuario = new Usuarios();
-this.usuario.setValuesCompletos(data);
-this.UsuariosService.login(this.usuario,inicio=inicio);
-console.log("inicio: " + inicio)
+    this.usuario = new Usuarios();
+    this.usuario.setValuesCompletos(data);
+    this.UsuariosService.login(this.usuario,inicio=inicio);
+
+    let data1: any;
+    if (localStorage.getItem('user')){
+
+      data1 = JSON.parse(localStorage.getItem('user'));
+
+        if (data1?.email){
+          this.usuario.setValues(data1);
+          console.log("ingreso");
+        }
+      }else {
+        console.log("No ingreso");
+        this.router.navigate(['login'])
+      }
+
+
   }
 
 

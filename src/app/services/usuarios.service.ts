@@ -22,15 +22,16 @@ constructor(public http: HttpClient) {
     return this.http.post<Usuarios>(this.urlServer, data).subscribe();
  }
 
- login(data: Usuarios, inicio: number) {
+ login(data: Usuarios, inicio: number){
 
   return this.http.post<Usuarios>(this.urlServer + '/login', data).subscribe((res: any)=>{
     if(res.token){
       localStorage.setItem('tk', res.token);
       localStorage.setItem('user', JSON.stringify(res.data));
-      inicio=1;
+
     }else{
-      inicio=0;
+      localStorage.setItem('tk', "");
+      localStorage.setItem('user', "");
     }
   });
 }
