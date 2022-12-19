@@ -14,21 +14,23 @@
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
+          <div [formGroup]="form">
           <ion-item>
-            <ion-input placeholder="Nombre de Usuario o Email"></ion-input>
+            <ion-input placeholder="Nombre de Usuario o Email" formControlName="email"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Password"></ion-input>
+            <ion-input placeholder="Password" formControlName="password"></ion-input>
           </ion-item>
           <ion-text [routerLink]="['/recuperarcuenta']" class="a">¿Olividaste tu contraseña?</ion-text>
 
           <div class="bottom-section">
-            <ion-button (click)="irAlInicio()">Sign In</ion-button>
+            <ion-button (click)="Iniciar()">Sign In</ion-button>
             <span>
               <ion-text>¿No tienes una cuenta? </ion-text>
               <ion-router-link color="success" [routerLink]="['/registrarse']">Sing Up</ion-router-link>
             </span>
           </div>
+        </div>
         </ion-card-content>
       </ion-card>
     </div>

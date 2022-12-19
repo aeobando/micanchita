@@ -5,6 +5,8 @@ import { ICanchas } from '../interfaces/icanchas';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { Canchas } from '../models';
+import { Usuarios } from '../models/Usuarios';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -13,16 +15,23 @@ import { Canchas } from '../models';
 })
 export class InicioPage implements OnInit {
   public canchas: Canchas[] = [];
+  public usuario: Usuarios = new Usuarios;
 
   componentes: Componente[] = [];
 
   slides: Observable<ICanchas[]>
-  constructor(private dataService: DataService) {
-    let cancha = new Canchas();
-    let data =  {id: 1,nombre: "Morumbi", descripcion:"Excelente Ubicación", precioHora:"70000", imagen:"../../assets/images/canchas/Morumbi.jpg"}
+  constructor(private dataService: DataService, private router: Router) {
+    let data: any;
+if (localStorage.getItem('user')){
 
-    cancha.setValues({data})
+     data = JSON.parse(localStorage.getItem('user'));
 
+    if (data?.email){
+      this.usuario.setValues(data);
+    }
+  }else {
+    this.router.navigate(['login'])
+  }
   }
 
   slideOpciones = {

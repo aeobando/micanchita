@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Usuarios } from '../models/Usuarios';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  constructor(private router: Router) { }
+  public form: FormGroup;
+  public usuario: Usuarios;
+  constructor(public UsuariosService: UsuariosService,private router: Router) { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+     })
   }
+
+  Iniciar(){
+    let inicio: number = 0;
+    let data = {
+                  email: this.form.get('email').value,
+                  password: this.form.get('password').value
+                }
+
+this.usuario = new Usuarios();
+this.usuario.setValuesCompletos(data);
+this.UsuariosService.login(this.usuario,inicio=inicio);
+console.log("inicio: " + inicio)
+  }
+
 
   irAlInicio(){
     this.router.navigate(['/inicio'])
