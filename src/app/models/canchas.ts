@@ -2,11 +2,16 @@ export class Canchas {
   id: string;
   nombre: string;
   descripcion:string;
-  precioHora: string;
+  precioHora: number;
   imagen: string;
 
-  constructor(){
-
+  setValues(data: any){
+    this.id = data.id;
+    this.nombre = data.nombre;
+    this.descripcion=data.descripcion;
+    this.precioHora = data.precioHora;
+    this.imagen = data.imagen;
   }
+
 
 }

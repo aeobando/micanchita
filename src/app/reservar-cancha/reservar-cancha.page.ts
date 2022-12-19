@@ -3,8 +3,10 @@ import { DataService } from '../services/data.service';
 import { ICanchas } from '../interfaces/icanchas';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { Canchas } from '../models/canchas';
+import { Canchas } from '../models/Canchas';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
+import { Reservas } from '../models/Reservas';
+import { Usuarios } from '../models/Usuarios';
 
 
 @Component({
@@ -18,12 +20,17 @@ export class ReservarCanchaPage implements OnInit {
   Minutos: number;
   canchita: ICanchas;
 
+
+
+
   handlerMessage = '';
   roleMessage = '';
 
   constructor(private dataService: DataService, private route: ActivatedRoute,
     private alertController: AlertController, private nav: NavController,
-    private toastController: ToastController) { }
+    private toastController: ToastController) {
+
+    }
 
   ngOnInit() {
 

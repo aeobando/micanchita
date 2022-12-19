@@ -16,27 +16,30 @@
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          <ion-item>
-            <ion-input placeholder="Nombre"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input placeholder="Apellidos"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input placeholder="Email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input placeholder="No. Tel&eacute;fono"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input placeholder="Password"></ion-input>
-          </ion-item>
+          <div [formGroup]="form">
+            <ion-item>
+              <ion-input placeholder="Nombres" formControlName="nombres"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Apellidos" formControlName="apellidos"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="No. Tel&eacute;fono" formControlName="telefono"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Password" formControlName="password"></ion-input>
+            </ion-item>
 
-          <div class="bottom-section">
-            <ion-button (click)="irAlLogin()">Registrarme</ion-button>
-            <span>
-              <ion-text>Ya tienes una cuenta? </ion-text>
-               <ion-router-link color="success" [routerLink]="['/login']">Sing In</ion-router-link></span>
+            <div class="bottom-section">
+              <ion-button (click)="Guardar()">Registrarme</ion-button>
+              <span>
+                <ion-text>Ya tienes una cuenta? </ion-text>
+                <ion-router-link color="success" [routerLink]="['/login']">Sing In</ion-router-link>
+              </span>
+            </div>
           </div>
         </ion-card-content>
       </ion-card>

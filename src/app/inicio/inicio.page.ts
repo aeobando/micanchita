@@ -4,6 +4,7 @@ import { Componente } from '../interfaces/interfaces';
 import { ICanchas } from '../interfaces/icanchas';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
+import { Canchas } from '../models';
 
 @Component({
   selector: 'app-inicio',
@@ -11,11 +12,18 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  public canchas: Canchas[] = [];
 
   componentes: Componente[] = [];
 
   slides: Observable<ICanchas[]>
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+    let cancha = new Canchas();
+    let data =  {id: 1,nombre: "Morumbi", descripcion:"Excelente Ubicación", precioHora:"70000", imagen:"../../assets/images/canchas/Morumbi.jpg"}
+
+    cancha.setValues({data})
+
+  }
 
   slideOpciones = {
     initialSlide: 0,

@@ -1,3 +1,3 @@
-export { Canchas } from './canchas';
+export { Canchas } from './Canchas';
 
 

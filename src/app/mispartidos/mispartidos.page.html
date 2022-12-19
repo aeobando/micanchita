@@ -1,7 +1,12 @@
 <app-header titulo="Mis Partidos"></app-header>
 
 <ion-content>
-
+  <ion-list *ngFor="let reserva of reservas">
+    <ion-item>
+      <ion-label>{{reserva.usuario.nombres}}</ion-label>
+      <ion-label>{{reserva.usuario.telefono}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <app-footer></app-footer>
