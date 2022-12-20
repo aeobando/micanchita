@@ -3,20 +3,19 @@ export class Canchas {
   nombre: string;
   descripcion:string;
   precioHora: number;
-  imagen?: {
-    formats: {
-      small: {
-        url: string;
-      };
-    };
-  };
+  imagen?: string;
 
   setValues(data: any){
     this.id = data.id;
     this.nombre = data.nombre;
     this.descripcion=data.descripcion;
     this.precioHora = data.precioHora;
-    //this.imagen = data.imagen;
+    if (data.imagen==null) {
+      this.imagen = this.imagen;
+    }else {
+      this.imagen= "/assets/images/canchas/" + data.imagen;
+    }
+
   }
 
 

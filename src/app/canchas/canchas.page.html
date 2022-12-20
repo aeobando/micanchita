@@ -42,7 +42,7 @@
         <ion-col size="12" sizeMd="3" *ngFor="let cancha of canchas | async">
           <ion-card>
             <img
-              [src]="cancha.imagen"
+              [src]="cancha.imagen ? cancha.imagen:'/assets/images/canchas/NoImageAvailable.jpg' "
               alt="">
             <ion-card-header>
               <ion-card-title>{{cancha.nombre}}</ion-card-title>

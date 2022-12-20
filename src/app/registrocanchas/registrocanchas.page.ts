@@ -58,7 +58,7 @@ export class RegistrocanchasPage implements OnInit {
     let vCancha = new Canchas();
     let data = {
       nombre: this.cancha.nombre,
-      descripcion:this.cancha.nombre,
+      descripcion:this.cancha.descripcion,
       precioHora:this.cancha.precioHora
     }
     vCancha.setValues(data);
