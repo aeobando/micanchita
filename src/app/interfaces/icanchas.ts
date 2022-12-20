@@ -1,8 +1,13 @@
 export interface ICanchas {
-  id: string;
+  id?: string;
   nombre: string;
   descripcion:string;
-  precioHora: string;
-  imagen: string;
-
+  precioHora: number;
+  imagen?: {
+    formats: {
+      small: {
+        url: string;
+      };
+    };
+  };
 }

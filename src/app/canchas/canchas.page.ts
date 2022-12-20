@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class CanchasPage implements OnInit {
   canchas: Observable<Canchas[]>
 
-  API = environment.url;
+  API = "localhost:8100";
   constructor(private canchasDataService: CanchasService, private router: Router,private alertController: AlertController) { }
 
 
@@ -25,7 +25,10 @@ export class CanchasPage implements OnInit {
 
   CargarCanchas() {
     this.canchas =  this.canchasDataService.getCanchas();
+  }
 
+  ionViewWillEnter(){
+    this.CargarCanchas();
   }
 
   async EliminarCanchas(id: string) {

@@ -22,15 +22,15 @@ export class CanchasService {
   }
 
   createCanchas(data: Canchas) {
-    return this.http.post<Canchas>(this.urlServer, data).subscribe();
+    return this.http.post(this.urlServer, data);
   }
 
   removeCanchas(id: string) {
-    return this.http.delete<Canchas>(this.urlServer + '/${id}');
+    return this.http.delete(`${this.urlServer}/${id}`);
   }
 
   getCanchasById(id: string) {
-    return this.http.get<Canchas>(this.urlServer + '/${id}');
+    return this.http.get<Canchas>(this.urlServer + '/{id}');
   }
 
   updateCanchas(id: string, data: Canchas) {

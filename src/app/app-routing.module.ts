@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'canchas',
     loadChildren: () => import('./canchas/canchas.module').then( m => m.CanchasPageModule)
   },
+  {
+    path: 'registrocanchas',
+    loadChildren: () => import('./registrocanchas/registrocanchas.module').then( m => m.RegistrocanchasPageModule)
+  },
 
 
 ];
