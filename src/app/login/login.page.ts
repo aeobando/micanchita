@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
   }
 
   Iniciar() {
-
+    let data1: any;
     let inicio: number = 0;
     let data = {
       email: this.form.get('email').value,
@@ -50,10 +50,11 @@ export class LoginPage implements OnInit {
     this.usuario = new Usuarios();
     this.usuario.setValuesCompletos(data);
 
+
     this.UsuariosService.login(this.usuario);
 
-    let data1: any;
-    if (localStorage.getItem('user')) {
+
+    if (this.variableNula(localStorage.getItem('user'))) {
 
       data1 = JSON.parse(localStorage.getItem('user'));
       if (this.variableNula(data1?.email)) {
@@ -64,9 +65,7 @@ export class LoginPage implements OnInit {
       }
 
     }
-
-
-  }
+}
 
   variableNula(variable) {
     if (variable == null || variable == undefined || variable == "null" || variable == "undefined") { return false } else { return true }

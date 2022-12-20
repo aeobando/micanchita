@@ -18,5 +18,10 @@
     "name": "Gestionar Canchas",
     "icon": "grid-outline",
     "redirectTo": "/canchas"
+  },
+  {
+    "name": "Salir",
+    "icon": "exit-outline",
+    "redirectTo": "/home"
   }
 ]
