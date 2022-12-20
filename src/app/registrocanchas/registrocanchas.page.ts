@@ -28,9 +28,9 @@ export class RegistrocanchasPage implements OnInit {
 
   ngOnInit() {
     this.actiavtedRoute.paramMap.subscribe((paramMap) => {
-      if (paramMap.get("postId")) {
+      if (paramMap.get("canchaId")) {
         this.canchasDataService
-          .getCanchasById(paramMap.get("postId"))
+          .getCanchasById(paramMap.get("canchaId"))
           .subscribe((res) => {
             this.cancha = res;
             this.edicion = true;
@@ -54,7 +54,7 @@ export class RegistrocanchasPage implements OnInit {
       });
   }
 
-  updatePost() {
+  ActualizarCancha() {
     let vCancha = new Canchas();
     let data = {
       nombre: this.cancha.nombre,

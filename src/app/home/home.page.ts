@@ -20,6 +20,8 @@ export class HomePage implements OnInit {
   } */
   ngOnInit() {
     this.usuarios = this.dataService.getUsers();
+    localStorage.setItem('tk', null);
+    localStorage.setItem('user', null);
   }
 
   irAlLogin(){

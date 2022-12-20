@@ -16,7 +16,7 @@ export class Canchas {
     this.nombre = data.nombre;
     this.descripcion=data.descripcion;
     this.precioHora = data.precioHora;
-    this.imagen = data.imagen;
+    //this.imagen = data.imagen;
   }
 
 

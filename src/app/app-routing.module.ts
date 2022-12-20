@@ -48,6 +48,10 @@ const routes: Routes = [
     loadChildren: () => import('./registrocanchas/registrocanchas.module').then( m => m.RegistrocanchasPageModule)
   },
 
+  {
+    path: 'canchas/edit/:canchaId',
+    loadChildren: () => import('./registrocanchas/registrocanchas.module').then( m => m.RegistrocanchasPageModule)
+  },
 
 ];
 

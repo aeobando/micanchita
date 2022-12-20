@@ -1,47 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="cancha"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ edicion ? 'Update': 'Create'}} a New Post</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="{{ edicion ? 'Actualizar': 'Crear'}} Cancha"></app-header>
+
 
 <ion-content>
+  <div class="background-pic">
+    <div class="background-filter">
+      <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="ion-padding">
+            <ion-card-header>
+              {{edicion?
+              'Actualizando la Cancha':
+              'Crear cancha'
+              }}
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input [(ngModel)]="cancha.nombre"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Descripcion</ion-label>
+                <ion-textarea [(ngModel)]="cancha.descripcion" rows="7"></ion-textarea>
+              </ion-item>
 
-  <ion-row>
-    <ion-col size-md="6" offset-md="3">
-      <ion-card class="ion-padding">
-        <ion-card-header>
-          {{edicion?
-          'Actualizando la Cancha':
-          'Crear cancha'
-          }}
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item>
-            <ion-label position="floating">Nombre</ion-label>
-            <ion-input [(ngModel)]="cancha.nombre"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Descripcion</ion-label>
-            <ion-textarea [(ngModel)]="cancha.descripcion" rows="7"></ion-textarea>
-          </ion-item>
+              <ion-item>
+                <ion-label position="floating">Precio por Hora</ion-label>
+                <ion-input type="number" [(ngModel)]="cancha.precioHora" placeholder="000"></ion-input>
+              </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Precio por Hora</ion-label>
-            <ion-input type="number" [(ngModel)]="cancha.precioHora" placeholder="000"></ion-input>
-          </ion-item>
+              <ion-button expand="full" (click)="edicion? ActualizarCancha(): GuardarCancha()" class="ion-margin-top">
+                {{edicion ? 'Actualizar': 'Guardar'}}
+              </ion-button>
+            </ion-card-content>
 
-          <ion-button expand="full" (click)="edicion? updatePost(): GuardarCancha()" class="ion-margin-top">
-            {{edicion ? 'Update': 'Save'}}
-          </ion-button>
-        </ion-card-content>
+          </ion-card>
 
-      </ion-card>
-
-    </ion-col>
-  </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+  </div>
 
 
 </ion-content>
