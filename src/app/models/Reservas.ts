@@ -6,7 +6,8 @@ export class Reservas {
   usuario: Usuarios;
   cancha: Canchas;
   fecha: Date;
-  hora: string;
+  horas: string;
+  minutos: string;
 
 
   setValues(data: any){
@@ -16,7 +17,8 @@ export class Reservas {
     this.cancha = new Canchas;
     this.cancha.setValues(data.cancha);
     this.fecha = data.fecha;
-    this.hora = data.hora;
+    this.horas = data.hora;
+    this.minutos = data.minutos;
   }
 
 

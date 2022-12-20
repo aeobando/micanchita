@@ -3,13 +3,13 @@
 <ion-content>
 
   <ion-card>
-    <img alt="Cancha" *ngIf="canchita?.imagen" [src]="canchita?.imagen" />
+    <img alt="Cancha" *ngIf="canchita?.imagen" [src]="canchita.imagen ? canchita.imagen:'/assets/images/canchas/NoImageAvailable.jpg' " />
     <ion-card-header>
       <ion-card-title>{{canchita?.nombre}}</ion-card-title>
       <ion-card-subtitle>{{canchita?.precioHora | currency}}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      {{canchita?.descripcion}}
     </ion-card-content>
   </ion-card>
 

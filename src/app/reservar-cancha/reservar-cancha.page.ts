@@ -7,6 +7,7 @@ import { Canchas } from '../models/Canchas';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { Reservas } from '../models/Reservas';
 import { Usuarios } from '../models/Usuarios';
+import { CanchasService } from '../services/canchas.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class ReservarCanchaPage implements OnInit {
   handlerMessage = '';
   roleMessage = '';
 
-  constructor(private dataService: DataService, private route: ActivatedRoute,
+  constructor(private dataService: CanchasService, private route: ActivatedRoute,
     private alertController: AlertController, private nav: NavController,
     private toastController: ToastController) {
 
@@ -35,16 +36,12 @@ export class ReservarCanchaPage implements OnInit {
   ngOnInit() {
 
     this.id = this.route.snapshot.paramMap.get('id');
-    this.dataService.getCanchas()
+    this.dataService.getCanchasById(this.id)
       .subscribe((resp) => {
-        resp.forEach((snap) => {
-          if (snap.id == this.id) {
-            this.canchita = snap;
-            console.log(this.canchita.nombre);
-          }
-        });
 
-      });
+            this.canchita = resp;
+
+        });
 
     }
 
