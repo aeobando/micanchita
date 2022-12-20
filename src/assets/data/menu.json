@@ -17,6 +17,6 @@
   {
     "name": "Gestionar Canchas",
     "icon": "grid-outline",
-    "redirectTo": "/mispartidos"
+    "redirectTo": "/canchas"
   }
 ]

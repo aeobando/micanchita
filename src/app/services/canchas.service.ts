@@ -12,12 +12,13 @@ import { Canchas } from '../models';
 export class CanchasService {
   public urlServer = environment.url + '/canchas';
 
+
   canchas: Observable<ICanchas[]>
   items: ICanchas[];
   constructor(private http: HttpClient) { }
 
   getCanchas(){
-    return this.http.get<ICanchas[]>(this.urlServer);
+    return this.http.get<Canchas[]>(this.urlServer);
   }
 
   createCanchas(data: Canchas) {

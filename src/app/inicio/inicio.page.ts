@@ -20,7 +20,8 @@ export class InicioPage implements OnInit {
 
   componentes: Componente[] = [];
 
-  slides: Observable<ICanchas[]>
+  slides: Observable<Canchas[]>
+  
   constructor(private canchasDataService: CanchasService, private router: Router) {
     let data: any;
     if (localStorage.getItem('user')) {

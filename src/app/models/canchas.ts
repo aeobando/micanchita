@@ -3,7 +3,13 @@ export class Canchas {
   nombre: string;
   descripcion:string;
   precioHora: number;
-  imagen: string;
+  imagen?: {
+    formats: {
+      small: {
+        url: string;
+      };
+    };
+  };
 
   setValues(data: any){
     this.id = data.id;

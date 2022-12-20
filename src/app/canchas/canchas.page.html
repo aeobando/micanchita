@@ -3,14 +3,14 @@
 <ion-content>
   <div class="background-pic">
     <div class="background-filter">
-      <div class="shape"><img src="../../assets/shape.svg" /></div>
 
-      <ion-card>
+
+      <!-- <ion-card>
         <ion-card-header>
           <ion-card-title>
             Gestion de Canchas
           </ion-card-title>
-          <ion-card-subtitle>
+          <!-- <ion-card-subtitle>
             Ingresa tu <strong>Email</strong> para restablecer la contraseña
           </ion-card-subtitle>
         </ion-card-header>
@@ -23,7 +23,57 @@
             <ion-button>Recuperar Contraseña</ion-button>
           </div>
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
+
+
+      <!-- <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content>
+      </ion-card> -->
+
+      <ion-row>
+        <ion-col size="12" sizeMd="3" *ngFor="let cancha of canchas | async">
+          <ion-card>
+            <img
+
+              [src]="cancha.imagen"
+              alt="">
+            <ion-card-header>
+              <ion-card-title>{{cancha.nombre}}</ion-card-title>
+              <ion-card-subtitle>{{cancha.precioHora | currency}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                {{cancha.descripcion}}
+              </div>
+              <ion-button color="secondary" [routerLink]="['/', 'cancha', 'edit', cancha.id]">
+                Update
+              </ion-button>
+              <ion-button color="danger" (click)="EliminarCanchas(cancha.id)">
+                Remove
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+      <!-- fab placed to the bottom end -->
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/post-form">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+
+
     </div>
   </div>
 </ion-content>
