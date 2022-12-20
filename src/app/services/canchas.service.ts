@@ -30,11 +30,11 @@ export class CanchasService {
   }
 
   getCanchasById(id: string) {
-    return this.http.get<Canchas>(this.urlServer + '/{id}');
+    return this.http.get<Canchas>(`${this.urlServer}/${id}`);
   }
 
   updateCanchas(id: string, data: Canchas) {
-    return this.http.put(this.urlServer + '/${id}', data);
+    return this.http.put(`${this.urlServer}/${id}`, data);
   }
 
 
