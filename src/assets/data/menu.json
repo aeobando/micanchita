@@ -13,5 +13,10 @@
     "name": "Mis Partidos",
     "icon": "walk",
     "redirectTo": "/mispartidos"
+  },
+  {
+    "name": "Gestionar Canchas",
+    "icon": "grid-outline",
+    "redirectTo": "/mispartidos"
   }
 ]

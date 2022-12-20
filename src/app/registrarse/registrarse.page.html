@@ -30,7 +30,10 @@
               <ion-input placeholder="No. Tel&eacute;fono" formControlName="telefono"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input placeholder="Password" formControlName="password"></ion-input>
+              <ion-input  #passwordEyeRegister  [type]="passwordTypeInput"  formControlName="password"></ion-input>
+              <button  item-end  class="btn_eye_icon"  (click)="togglePasswordMode()">
+                  <ion-icon  [name]="iconpassword"></ion-icon>
+              </button>
             </ion-item>
 
             <div class="bottom-section">

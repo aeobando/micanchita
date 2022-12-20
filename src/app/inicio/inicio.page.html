@@ -15,97 +15,48 @@
 
 <ion-content>
   <ion-router-outlet id="principal"></ion-router-outlet>
-  <!--
-  <div class="slide">
-    <ion-slides pager="true" [options]="slideOpciones">
-      <ion-slide *ngFor="let slide of slides | async">
-        <ion-card mode="ios">
-          <img class="slideimg" alt="" [src]="slide.imagen" />
-          <ion-card-header>
-            <ion-card-title>{{slide.nombre}}</ion-card-title>
-          </ion-card-header>
+  <div id="container">
 
-          <ion-card-content>
-            <ion-button routerLink="/reservar-cancha/{{slide.id}}">Reservar</ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </div>
+    <div class="searchbar">
+      <ion-searchbar placeholder="Buscar canchas" no-shadow>
+      </ion-searchbar>
 
 
-  <div class="wrapper">
-    <blockquote class="caracteristicasblq">
-      <ion-label>¡Hoy es un buen d&iacute;a para Jugar!</ion-label>
-    </blockquote>
+      <div class="main-featured-products">
+        <ion-slides pager="true" [options]="options" (click)="sliderOptions">
+          <ion-slide *ngFor="let cancha of slides | async">
+            <ion-card class="main-product-card">
+              <ion-card-content>
+                <img [src]="[cancha?.imagen]" />
 
-    <section class="opciones">
+                <ion-card-title>
+                  {{cancha.nombre}}
+                </ion-card-title>
 
-      <section class="opcionreserva">
-        <div class="ion-activatable ripple-parent circle" [routerLink]="['/reservas']">
-          <img src="../../assets/images/reserva.png" alt="">
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
-        <ion-text>Reservar</ion-text>
-      </section>
+                <ion-card-subtitle>
+                  <ion-item lines="none" full="true">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-icon name="star" color="warning"></ion-icon>
+                  </ion-item>
 
-      <section class="opcionmispartidos">
-        <div class="ion-activatable ripple-parent circle" [routerLink]="['/mispartidos']">
-          <img src="../../assets/images/listadopartidos.png" alt="">
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
-        <ion-text>Mis Partidos</ion-text>
-      </section>
+                  <div class="time-icon">
+                    <ion-icon ios="cash-outline" md="timer" color="warning"></ion-icon>
+                    {{cancha?.precioHora | currency}}
+                  </div>
 
-    </section>
-  </div>
--->
+                  <ion-button block routerLink="/reservar-cancha/{{cancha?.id}}">Reservar</ion-button>
+                </ion-card-subtitle>
 
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
 
-
-
-<div id="container">
-
-  <div class="searchbar">
-    <ion-searchbar placeholder="Buscar canchas" no-shadow>
-    </ion-searchbar>
-
-
-    <div class="main-featured-products">
-     <ion-slides pager="true" [options]="options" (click)="sliderOptions">
-      <ion-slide *ngFor="let cancha of slides | async">
-        <ion-card class="main-product-card">
-          <ion-card-content>
-          <img [src]="[cancha?.imagen]" />
-
-          <ion-card-title>
-            {{cancha.nombre}}
-        </ion-card-title>
-
-          <ion-card-subtitle>
-              <ion-item lines="none" full="true">
-               <ion-icon name="star"  color="warning"></ion-icon>
-               <ion-icon name="star"  color="warning"></ion-icon>
-               <ion-icon name="star"  color="warning"></ion-icon>
-               <ion-icon name="star"  color="warning"></ion-icon>
-              </ion-item>
-
-          <div class="time-icon">
-           <ion-icon ios="cash-outline" md="timer"  color="warning"></ion-icon>
-           {{cancha?.precioHora | currency}}
-            </div>
-
-            <ion-button block  routerLink="/reservar-cancha/{{cancha?.id}}">Reservar</ion-button>
-         </ion-card-subtitle>
-
-       </ion-card-content>
-       </ion-card>
-      </ion-slide>
-     </ion-slides>
     </div>
-
-</div>
-</div>
+  </div>
 
 </ion-content>
 

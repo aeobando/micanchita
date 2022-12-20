@@ -7,6 +7,7 @@ import { DataService } from '../services/data.service';
 import { Canchas } from '../models';
 import { Usuarios } from '../models/Usuarios';
 import { Router } from '@angular/router';
+import { CanchasService } from '../services/canchas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -20,18 +21,18 @@ export class InicioPage implements OnInit {
   componentes: Componente[] = [];
 
   slides: Observable<ICanchas[]>
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private canchasDataService: CanchasService, private router: Router) {
     let data: any;
-if (localStorage.getItem('user')){
+    if (localStorage.getItem('user')) {
 
-     data = JSON.parse(localStorage.getItem('user'));
+      data = JSON.parse(localStorage.getItem('user'));
 
-    if (data?.email){
-      this.usuario.setValues(data);
+      if (data?.email) {
+        this.usuario.setValues(data);
+      }
+    } else {
+      this.router.navigate(['login'])
     }
-  }else {
-    this.router.navigate(['login'])
-  }
   }
 
   slideOpciones = {
@@ -43,22 +44,22 @@ if (localStorage.getItem('user')){
   options = {
     slidesPerView: 1.5,
     centered: true,
-    spaceBetweenView:10,
-    speed:400
+    spaceBetweenView: 10,
+    speed: 400
   }
 
 
-  sliderOptions ={
-  initialSlide: 0,
-  slidesPerView: 1,
-  autoplay: true
+  sliderOptions = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay: true
 
   }
 
 
 
   ngOnInit() {
-    this.slides = this.dataService.getCanchas();
+    this.slides = this.canchasDataService.getCanchas();
   }
 
 }
